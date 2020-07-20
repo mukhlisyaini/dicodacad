@@ -1,0 +1,51 @@
+dasar pemrograman web
+Memanfaatkan website sebagai alat editing photo. https://pixlr.com/
+
+Server
+server sebenarnya lebih merujuk pada sebuah software yang dapat menghubungkan sebuah komputer dengan komputer lain. Jadi penekanan sebuah server bukan pada sebuah komputernya, melainkan pada rule atau fungsi dari sebuah komputer tersebut.
+
+HTTP Server
+HTTP Server merupakan sebuah software yang dapat menerima transaksi dari HyperText Transfer Protocol dalam suatu website atau biasa disebut dengan “HTTP Server”. Banyak software yang dapat melakukan tugas tersebut. Apache adalah salah satunya yang cukup friendly, gratis, dan tersedia untuk seluruh komputer dengan basis UNIX (termasuk MacOS) dan juga Windows.
+
+
+
+DNS Server
+Setiap perangkat baik komputer, smartphone, modem, maupun router yang terkoneksi internet akan memiliki IP Address. Contohnya, komputer yang menjadi host dari dicoding.com memiliki IP 104.28.20.105, Jika kita menggunakan IP tersebut untuk mengakses sebuah website, tentu akan repot. Mengingat kumpulan angka memang dapat seorang manusia lakukan, tapi bagaimana jika harus mengingat 10 IP? Untuk mengatasinya, dibuatlah Domain Name System (DNS) yang dapat mengubah/mengarahkan website melalui sebuah nama domain (“dicoding.com”). 
+
+
+
+Client
+Jika ada penyedia (server) tentu ada pengguna bukan? Perangkat yang meminta (request) suatu layanan tertentu ke suatu server disebut dengan client. Browser merupakan salah satu client yang memanfaatkan HTTP Server dalam transaksi datanya. Jelas, tujuannya adalah untuk mengolah, menampilkan, dan melakukan interaksi dengan dokumen yang disediakan oleh web server. Layaknya sebuah pelukis, browser mampu menyajikan informasi dalam bentuk visual yang indah bersumber dari data mentah yang diperoleh dari server.
+
+
+Server-side dan Client-side
+Dalam pengembangan web, terdapat istilah “Client-Side” atau “Server-side”. Hal ini merujuk pada sebuah proses yang dilakukan pada sisi client atau di sisi server. Untuk client side, semua proses terjadi di sisi pengguna, client meminta data ke server di mana data yang dikirimkan nanti diolah di sisi client. Biasanya data yang diolah dalam bentuk HTML, CSS, dan JavaScript. 
+
+Sedangkan untuk server side, semua proses yang terjadi dilakukan di sisi server. Server side bertanggung jawab untuk merespon data yang diminta oleh client side. Biasanya server side merupakan tempat di mana terjadinya interaksi pada database, sehingga sisi client tidak mengetahui prosesnya dan memang tidak boleh tahu. Client hanya diberikan sebuah data hasil olahan dari sisi server.
+
+gambar anatomi web
+Main idea: https://www.freecodecamp.org/news/learn-html-in-5-minutes-ccd378d2ab72/
+
+Silabus
+Pada modul 2 dan 3 kita akan mempelajari rangkaian penggunaan HTML pada website. Mulai dari pembuatan berkas HTML, mengenal dan menggunakan elemen, serta menampilkan gambar dan penyusunan layout. Kemudian pada modul 4 dan 5 kita akan mempelajari penerapan styling pada website untuk mempercantik dan membantu dalam penyusunan website. Sampai modul ini, kita akan membuat sebuah halaman website yang menarik.
+
+Pada modul 6, kita akan belajar bagaimana cara menyusun layout yang responsif menggunakan flexbox. Selain itu juga terdapat praktik membuat sebuah layout dasar kalkulator pada website.
+
+Sedangkan JavaScript akan dibahas pada modul 7. Di  sana kita akan belajar dasar-dasar dari bahasa pemrograman JavaScript, pengenalan syntax, penggunaan variabel, tipe data yang ada, iterator, dll. Selain itu kita juga akan belajar bagaimana cara memanipulasi “DOM” dengan menggunakan JavaScript sehingga dapat membuat website yang interaktif. 
+
+Pada modul 8, kita akan mempelajari cara mengelola sebuah data atau objek pada local storage ataupun session storage dengan memanfaatkan Web Storage. Sampai modul ini, kita akan membuat sebuah proyek kalkulator sederhana dengan memanfaatkan Web Storage untuk menyimpan histori perhitungannya.
+
+Dan pada akhir pembelajaran, untuk lulus dari kelas ini, terdapat submission alias proyek akhir yang harus Anda kirimkan. Proyek tersebut akan kemudian kami review guna menentukan kelulusan Anda.
+
+teks editor
+Visual Studio Code
+Visual Studio Editor merupakan sebuah text editor yang dikembangkan oleh Microsoft. Dalam text editor ini terdapat fitur debugging, Git control, syntax highlighting, code completion, snippets, dan code refactoring. Visual Studio Code tersedia untuk sistem operasi Windows, Mac maupun Linux, dan tentunya text editor ini bisa kita gunakan secara gratis. Untuk mengunduhnya silakan kunjungi website berikut: https://code.visualstudio.com/
+
+Atom Editor
+Atom merupakan text editor gratis dan juga open source untuk Windows, Linux, dan MacOS. Sama seperti Visual Studio Editor, kedua text editor ini merupakan editor yang populer digunakan oleh web developer. Untuk mengunduhnya, silakan kunjungi website berikut: https://atom.io/
+
+Emacs
+Editor ini mungkin tidak secanggih opsi-opsi sebelumnya dalam menuliskan kode HTML, CSS, dan JavaScript. Namun, jika kalian tertarik belajar melalui proses tanpa fitur yang mempermudah kita dalam menuliskan sebuah kode, maka text editor ini cocok untuk dicoba. Emacs memiliki fitur yang tidak disangka-sangka untuk sebuah text editor, seperti news reader, kalkulator, dan fitur untuk enkripsi/dekripsi file. Emacs tersedia untuk Windows, Macs, maupun Linux secara gratis. Untuk mencobanya, kalian bisa mengunjungi halaman website berikut: https://www.gnu.org/software/emacs/
+
+Developer Tools atau Dev Tools merupakan alat yang dapat digunakan untuk melakukan debugging pada sebuah website. Dev Tools ini merupakan tools yang andal dalam mencari suatu bugs dan memperbaikinya. Bahkan kita dapat mensimulasikan tampilan website pada sebuah layar smartphone, sehingga tak perlu repot-repot memakai smartphone untuk melihat responsibilitas website yang kita kembangkan.
+
