@@ -1,0 +1,188 @@
+Introduction to Styling
+Pada modul pengenalan sudah disinggung seperti apa peran CSS pada website. Website nampak begitu membosankan dan mengerikan tanpa adanya CSS. Cascading Style Sheet atau biasa disingkat CSS merupakan W3C standar yang digunakan untuk mengatur visualisasi  berkas yang ditulis pada HTML. Pada modul ini kita akan belajar penggunaan dasar dari CSS. Tepatnya  mulai dari pembuatan berkas CSS, pengenalan struktur sintaksnya, hingga menerapkan dasar styling seperti memberikan warna pada sebuah teks.
+
+CSS syntax berbeda dengan HTML, begitu pula dengan JavaScript. CSS bukanlah sebuah bahasa pemrograman karena di dalamnya tidak terdapat logika, tidak dapat membuat sebuah variabel, tidak adanya proses iterasi, dsb. CSS hanya sebuah declarative language yang digunakan untuk mendeklarasikan suatu nilai yang nantinya digunakan untuk mengatur seperti apa sebuah elemen HTML ditampilkan pada browser.
+
+Keuntungan Menggunakan CSS
+Dengan menerapkan CSS, tampilan website kita akan lebih menarik. Berikut beberapa keuntungan yang didapatkan ketika kita menerapkan CSS.
+
+Dapat mengontrol dan menerapkan layout secara presisi. Dengan menggunakan CSS kita bisa membuat sebuah website seperti dokumen cetak dengan desain yang menarik dan presisi.
+Menghindari pekerjaan yang berulang-ulang dalam menerapkan styling. Kita dapat menetapkan styling pada beberapa berkas HTML hanya dengan menggunakan satu berkas CSS.
+Didukung banyak browser. Seluruh browser saat ini minimal sudah mendukung CSS versi 2. Untuk browser yang populer seperti Chrome dan Firefox sudah mendukung CSS versi 3. 
+Sudah jelas, bukan? Tiada alasan kita tidak menerapkan CSS. Terkecuali dukungan pada browser yang terkadang berbeda setiap vendornya (contohnya vendor prefixes), tapi hal tersebut tidak menjadi masalah ketika kita tahu di mana letak perbedaan dan cara penerapannya.
+
+
+Bagaimana Style Sheet Bekerja?
+Sebuah style sheet bekerja melalui tahapan berikut:
+
+Dimulai dari sebuah dokumen yang telah ditandai dengan tag elemen HTML.
+Menuliskan aturan styling untuk menentukan bagaimana elemen HTML akan ditampilkan.
+Melampirkan aturan styling yang sudah dibuat pada dokumen HTML. Ketika browser memuat dokumen, tampilan elemen yang ditampilkan akan menyesuaikan dengan aturan styling yang sudah ditetapkan.
+
+Memberikan Markup pada Dokumen
+Pada modul sebelumnya kita sudah mengenal banyak bagaimana cara untuk me-markup atau memberikan tag sebuah konten dalam HTML. Mungkin sebagian dari kita bingung, mengapa kita perlu mengelompokkan sebuah konten tapi tiada perubahan signifikan pada tampilan browser? Contohnya seperti elemen <div> yang tidak akan mengubah apapun sebelum kita menerapkan sebuah styling pada elemennya. Sebenarnya terdapat hubungan antara struktur dokumen dengan sebuah style sheet. Kita akan memahami ini seiring kita belajar hingga pembahasan lebih lanjut.
+
+Menuliskan Aturan Styling
+Sebuah style sheet dibuat terdiri dari satu atau lebih aturan styling (biasa disebut dengan rules atau rule-sets) yang mendeskripsikan bagaimana sebuah elemen atau sebuah kelompok elemen ditampilkan dalam jendela browser. 
+
+Langkah awal belajar CSS adalah dengan memahami sebuah bagian rule. Berikut ini dua contoh rules yang dituliskan dalam sebuah CSS. Rule yang pertama menetapkan sebuah warna hijau pada elemen <h1> dan rule yang kedua menetapkan ukuran font dan tipe font pada sebuah elemen paragraf.
+
+Dalam penggunaan CSS, terdapat dua bagian dalam sebuah rule. Yang pertama adalah identitas elemen atau elemen yang akan menerapkan rule (singkatnya kita akan sebut selector) dan yang kedua adalah deklarasi atau instruksi yang akan diterapkan pada sebuah selector.
+
+Selector
+Pada contoh di atas, h1 dan p digunakan sebagai selector. Selector ini dipanggil melalui tipe elemennya, dan ini merupakan teknik dasar dari pemanggilan selector. Properti dan nilainya yang terdapat pada declaration/declaration block akan diterapkan pada seluruh elemen <h1> dan <p> yang ada pada dokumen HTML. Pada modul selanjutnya kita akan mengetahui berbagai cara lainnya untuk menetapkan selector dengan lebih canggih lagi.
+
+
+
+Declarations
+Bagian deklarasi terdiri dari pasangan properti dengan nilainya. Kita bisa menetapkan lebih dari satu deklarasi pada satu rule, contohnya seperti pada selector p di atas. Kita menetapkan lebih dari satu deklarasi pada declaration block. Setiap deklarasinya harus diakhiri dengan semicolon (;) sebagai tanda diakhirinya sebuah deklarasi.
+
+Karena CSS tidak memperhatikan spasi (sama seperti bahasa pemrograman pada umumnya), sebaiknya penulisan deklarasi selalu diawali dengan garis baru supaya mudah dibaca dan dipahami.
+
+Tapi ingat, walaupun CSS tidak memperhatikan spasi, untuk satuan nilai seperti px, em dan lainnya harus dituliskan tanpa spasi pada nilainya. Contohnya:
+h1 {
+   margin: 2em;
+}
+Jika kita menambahkan spasi di antara satuan dan nilai, maka deklarasi tersebut tidak akan berfungsi.
+
+h1 {
+   margin: 2 em; /* Deklarasi tidak akan berfungsi karena terdapat spasi antara nilai dan satuan */
+}
+
+Melampirkan Styling pada Dokumen HTML.
+Setelah kita menuliskan rules, maka tahapan selanjutnya adalah melampirkan atau menerapkan aturan tersebut pada berkas HTML. Sebenarnya, terdapat tiga cara untuk menerapkan styling pada elemen HTML.
+
+
+
+External Style Sheet 
+External Style Sheet merupakan berkas terpisah yang di dalamnya hanya terdapat sebuah rules. Berkas ini harus berekstensi .css, dan berkas ini nantinya dihubungkan pada dokumen HTML. Cara ini merupakan yang paling powerful dalam menerapkan styling. Karena dengan cara ini, satu berkas styling (.css) dapat digunakan oleh banyak berkas HTML.
+
+Untuk menyambungkan berkas .css dengan dokumen HTML, kita dapat menggunakan elemen <link> pada <head> berkas HTML. Contohnya:
+
+<head>
+   <title>Document Title</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+Pada elemen <link> tersebut, kita tetapkan berkas CSS yang digunakan dengan menggunakan atribut href dan beri nilai “stylesheet” pada atribut rel sebagai relationship (hubungan) antara berkas style.css dengan dokumen HTML.
+
+Pada contoh di atas kita tahu bahwa berkas css yang digunakan merupakan berkas lokal (berkas yang berada pada komputer/server kita sendiri). Nilai atribut href juga dapat berupa berkas .css yang tersedia melalui sebuah URL. 
+
+Contohnya, banyak pengembang menggunakan bootstraps.min.css untuk membantu penyusunan layout website-nya. Kita bisa menggunakannya pada berkas HTML dengan langsung menuliskan URL untuk berkas tersebut.
+
+<head>
+   <title>Document Title</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+min.css merupakan penamaan format berkas .css yang sudah di-minify atau sudah diminimalkan dengan menghilangkan white space yang tidak digunakan
+
+Embedded Style Sheet
+Embedded Style Sheet merupakan kumpulan rules yang dituliskan dalam berkas HTML dengan menggunakan elemen <style>. Dengan begitu rules yang dituliskan hanya dapat dicakup oleh satu berkas HTML. Penulisan rules harus dituliskan dalam elemen <style> dan ditempatkan di dalam <head> dari berkas HTML.
+
+<head>
+   <title>Document Title</title>
+   <style>
+       /*
+        * Rules styling dituliskan di sini
+        */
+   </style>
+</head>
+
+Inline Style
+Inline Style merupakan styling yang diterapkan pada elemen HTML dengan menggunakan atribut style. Contohnya seperti berikut:
+
+<h1 style="color: green">Kota Bandung</h1>
+Untuk menambahkan styling properties lainnya (multiple properties), kita tuliskan dengan menggunakan semicolon (;) sebagai pemisah antar styling properties-nya.
+
+<h1 style="color: green; margin-top: 2em">Kota Bandung</h1>
+Inline styles hanya diterapkan pada elemen di mana atribut style diterapkan. Teknik ini seharusnya dihindari terkecuali benar-benar diperlukan untuk menggantikan sebuah styling yang ditetapkan pada Embedded Style Sheet atau External Style Sheet.
+
+Commenting in Style
+Pada contoh kode di atas, kita sudah melihat sebuah teks pada rule yang dimulai dari /* dan diakhiri dengan */. Teks tersebut merupakan commenting line di dalam sebuah CSS. Sama seperti commenting pada HTML dan bahasa pemrograman lainnya, Teks yang dijadikan sebuah komentar tidak akan diproses oleh browser (sebagai compiler) atau lebih tepatnya “diabaikan”.
+
+Berikut adalah contoh memberikan komentar pada CSS:
+
+/* ini merupakan komentar satu baris */
+ 
+/* CSS juga mendukung komentar lebih dari satu baris,
+  seluruh teks yang berada pada pembuka dan penutup sebuah komentar
+  akan diabaikan oleh browser sebagai compiler.
+*/
+
+
+Menulis Rules pada Berkas CSS
+Untuk latihan awal, kita bisa coba menuliskan sebuah rule styling pada beberapa elemen HTML yang ada pada latihan sebelumnya.
+
+Yang pertama, tetapkan tipe font ‘sans-serif’ sebagai font yang digunakan pada seluruh elemen yang ada di dalam <body>. Silakan buka berkas style.css yang sudah kita buat pada text editor dan tuliskan kode berikut:
+
+body {
+   font-family: sans-serif;
+}
+Yang kedua, kita tetapkan juga warna pada setiap elemen <h2> dan <h3> yang digunakan pada berkas HTML dengan menuliskan kode sebagai berikut:
+
+h2 {
+   color: #00a2c6
+}
+ 
+h3 {
+   color: #00a2c6
+}
+Dan yang terakhir, kita coba ubah warna background dan warna teks pada elemen <footer>, serta beri sebuah padding.
+
+footer {
+   padding: 20px;
+   color: white;
+   background-color: #00a2c6
+}
+Sehingga keseluruhan kode pada berkas style.css akan nampak seperti ini:
+
+body {
+   font-family: sans-serif;
+}
+ 
+h2 {
+   color: #00a2c6
+}
+ 
+h3 {
+   color: #00a2c6
+}
+ 
+footer {
+   padding: 20px;
+   color: white;
+   background-color: #00a2c6
+}
+
+CSS Conception
+Sebelum membahas lebih detail mengenai styling, terdapat beberapa konsepsi dalam CSS yang harus kita pahami.
+
+
+
+Inheritance
+Styling HTML bersifat inheritance yang artinya dapat mewarisi properti style “tertentu” pada elemen yang ada di dalamnya. Contohnya pada rules yang kita tuliskan untuk elemen <body> akan diterapkan pada seluruh elemen yang ada di dalam elemennya (body). Contoh lainnya, pada rules yang diterapkan pada elemen <footer> dengan properti color yang bernilai white, akan diterapkan pada seluruh elemen yang ada di dalam <footer>. Hal ini menjadi alasan mengapa memahami struktur dokumen itu penting.
+
+Group Selector
+Jika kita menerapkan rule yang sama pada beberapa selector yang berbeda, di CSS kita dapat menggabungkan selector tersebut sehingga dapat meminimalisir penulisan kode yang berulang. 
+
+Contohnya pada styling yang sudah kita buat sebelumnya, terdapat rule yang serupa antara h2 dan h3.
+
+h2 {
+   color: #00a2c6
+}
+ 
+h3 {
+   color: #00a2c6
+}
+Jika terdapat kasus seperti ini, kita dapat menuliskan dua selector sekaligus dalam satu struktur rule. Gunakan tanda koma (,) untuk memisahkan tiap selector-nya. Silakan kita buka kembali berkas style.css dan gabungkan rule untuk elemen <h2> dan <h3> menjadi seperti ini:
+
+h2, h3 {
+   color: #00a2c6
+}
+
+
+Rule Order
+Sesuai dengan namanya, cascading artinya “mengalir.” Demikian halnya dengan alur kerja CSS dalam membaca kode yang mengalir dari atas ke bawah. Karena itu kita harus memperhatikan urutan dalam penulisan rules, terutama saat terjadi sebuah konflik.
+
+Konflik dapat terjadi karena kita dapat menerapkan beberapa styling pada satu dokumen HTML. Contohnya, apa yang seharusnya ditampilkan pada browser ketika eksternal css mengharuskan elemen <p> menampilkan warna merah, tetapi pada embedded css <p> harus menampilkan warna biru? Kembali pada alur kerja CSS yang membaca dari atas ke bawah, sehingga warna yang akan diterapkan adalah warna yang paling akhir didefinisikan. 

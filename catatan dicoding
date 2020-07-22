@@ -181,5 +181,367 @@ Terkadang kita mungkin perlu menambahkan sebuah baris baru pada sebuah baris tek
 
 Inline line break element atau <br> dapat digunakan untuk memberitahu browser untuk memberikan sebuah garis baru pada baris teks. Sama seperti gambar, elemen ini merupakan elemen kosong sehingga kita tidak membutuhkan sebuah tag penutup.
 
+Semantic HTML - Mengorganisasikan Halaman Konten
+Seperti yang sudah disebutkan pada modul sebelumnya, sebuah website memiliki hierarki konten yang sama seperti dokumen sehari-hari yang kita baca, misalnya seperti majalah, dan koran. Sehingga, hierarki pada sebuah website merupakan hal yang penting. Namun, tentu saja elemen yang terdapat pada HTML perlu kita kelompokkan menjadi beberapa bagian.
 
+Sebelum HTML5, kita mengelompokan suatu elemen HTML yang memiliki konten serupa dalam sebuah generic element <div> (kita akan membahas div secara dalam nanti). Kita mengelompokkan sebuah header website dengan menggunakan <div>, membuat sebuah navigation dengan menggunakan <div> juga, artikel atau section yang lainnya. Kita biasa gunakan atribut class atau id untuk mengindikasikan peran dari elemen tersebut. Hal ini membuat struktur pada website hilang (semantic meaningless).
+
+Pada HTML5 kita dikenalkan pada beberapa elemen yang dapat digunakan dalam mengelompokkan sebuah elemen dengan lebih jelas dan memiliki arti (semantic HTML). Elemen-elemen ini memiliki nama sesuai dengan fungsi atau peran dari elemen tersebut.
+
+Header dan Footer
+Elemen ini dapat kita gunakan untuk:
+
+Sebuah header dan footer utama yang muncul pada awal dan akhir di sebuah halaman <body>. 
+Header digunakan sebagai pengantar atau pembuka konten dalam sebuah elemen <article> atau <section>. 
+Footer digunakan sebagai catatan kaki pada sebuah elemen <article> atau <section>.
+
+Pada contoh dibawah ini elemen <header> digunakan untuk menampilkan nama situs dan navigasi utama.
+
+Dan elemen <footer> digunakan sebagai informasi hak cipta.
+
+Perlu kita ketahui bahwa elemen <header> dan <footer> tidak boleh ditulis di dalam elemen <header> dan <footer> lainnya (bertumpuk/nested).
+
+
+
+Nav
+Elemen <nav> digunakan untuk menampung sebuah navigasi yang sifatnya penting (major), contohnya navigasi utama pada sebuah website.
+
+Tapi tidak menjamin pada sebuah website hanya ada satu navigasi. Contohnya, sebuah akhir artikel pada blog terdapat tautan navigasi menuju artikel yang dianggap relevan dengan artikel yang telah kita baca. Navigasi tersebut tidak dianggap sebagai navigasi yang penting, sehingga kita tidak perlu menggunakan elemen <nav> untuk menampilkannya.
+
+Pada pembahasan header dan footer, kita sudah melihat contoh penggunaan dari elemen <nav> yang diletakkan pada elemen <header>. 
+
+Sebuah navigation pada dasarnya sangat berguna untuk aksesibilitas website kita. Contohnya ketika pengguna website kita menggunakan screen reader dalam mengunjungi website, pengguna akan mudah mencari bagian yang dia inginkan tanpa harus menelusuri seluruh konten website.
+
+Articles
+Elemen <article> bertindak sebagai container untuk independen konten pada sebuah halaman, artinya konten utuh yang tidak terkait dengan konten lain. Bisa saja konten yang dimasud berupa artikel blog, komentar, forum post, dan konten lainnya.
+
+Jika sebuah halaman terdapat beberapa artikel, maka tiap artikel tersebut seharusnya berada pada elemen article-nya masing-masing.
+
+Elemen <article> dapat berada pada elemen <article> lainnya (nested) selama artikel tersebut berkaitan dengan induk elemen <article> yang menampungnya.
+
+
+
+Aside
+Elemen <aside> memiliki dua tujuan, tergantung kita menempatkannya di dalam sebuah elemen <article> atau tidak.
+
+Ketika elemen ini ditempatkan di dalam elemen <article>, pada elemen ini dapat berisikan informasi yang berhubungan dengan artikel tersebut, tetapi bukan bagian dari konten artikelnya itu sendiri (dipisahkan dari konten utama). 
+
+Ketika elemen ini ditempatkan di luar dari elemen <article>, pada elemen ini dapat berisikan informasi yang berhubungan pada keseluruhan halaman.
+
+Elemen <aside> biasanya terletak di samping dari sebuah elemen yang menampungnya. 
+
+Section
+Sebuah elemen yang memiliki kesamaan konten dan memiliki sebuah heading di dalamnya dapat dikelompokkan dengan menggunakan elemen <section>. Dengan begitu elemen ini dapat digunakan pada sebuah elemen <article> yang memiliki konten panjang dan berpotensi untuk dikelompokkan.
+
+Di dalam sebuah <section> sebaiknya terdapat elemen heading (h1 - h6), yang menjadi elemen pertama yang dituliskan pada sebuah section untuk menunjukkan judul atau tema dari bagian konten yang dikelompokkan.
+
+Generic Element
+Setelah mengenal beberapa elemen yang ada, bagaimana jika tidak terdapat elemen sesuai yang mampu menggambarkan konten kita? Dalam dunia nyata, jenis informasi sangat beragam dan mungkin tidak semua semantik elemen yang kalian ketahui dapat menggambarkan jenis informasinya. Untungnya, HTML menyediakan dua tipe elemen umum (generic element) yang bisa kita kustomisasi untuk menggambarkan konten kita dengan tepat. 
+
+Terdapat dua generic elemen yang dapat kita manfaatkan. 
+
+Div
+Yang pertama elemen <div>, elemen ini merupakan sebuah wadah (container) yang bersifat umum untuk menampung beberapa konten. Elemen ini tidak akan memberikan efek apapun pada konten atau layout sebelum menerapkan sebuah style menggunakan CSS.
+Sebagai sebuah wadah yang murni, elemen <div> tidak merepresentasikan apapun. Elemen ini lebih sering digunakan untuk mengelompokkan sebuah konten sehingga dapat memudahkan styling dengan menggunakan atribut class atau id.
+
+Span
+Yang kedua elemen <span>, elemen ini memberikan manfaat yang sama seperti <div>, bedanya elemen ini digunakan sebagai phrase elements dan tidak terdapat line breaks ketika menggunakannya. Sederhananya, <span> merupakan sebuah <div> yang digunakan dalam sebuah baris teks yang dapat diwadahi oleh paragraf, list, heading atau lainnya.
+
+Mari kita ambil contoh. Tidak ada elemen pada inline element yang memiliki arti untuk menampung sebuah informasi telepon. Maka dari itu, tiap item pada nomor telepon bisa ditampung dalam elemen <span> dan diklasifikasikan (menggunakan atribut class) dengan nilai “phone”.
+
+Mengorganisasikan Konten pada Halaman Profil
+Kita sudah mengenal beberapa elemen yang digunakan untuk mengorganisasikan halaman, seperti <header>, <footer>, <article>, dan yang lainnya. Dan juga kita sudah mengenal generic elemen yang digunakan untuk mengelompokkan elemen secara umum. Sekarang saatnya kita mengorganisasikan pada halaman profil yang sudah kita buat sebelumnya.
+
+Sebelum mengorganisasikan konten, mari kita tambahkan sebuah konten untuk diterapkan pada elemen <aside> nantinya. Unduh terlebih dahulu aset gambar yang akan digunakan pada tautan berikut: https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Bandung_coa.png/279px-Bandung_coa.png
+
+Simpanlah gambar tersebut pada folder assets -> images bersama dengan empat gambar yang lain dan beri nama bandung-badge.png.
+
+Menetapkan Elemen <header>, <main> dan <footer>.
+Mari kita buat konten yang berada pada body menjadi tiga bagian besar yaitu heading, main dan footer. Kelompokkan konten judul besar dan navigasi menggunakan elemen <header>.
+
+Sebelumnya, kita mengetahui bahwa elemen list yang dibuat nantinya akan dijadikan sebuah navigasi, maka di dalam elemen header ini, kita tambahkan elemen <nav> untuk membungkus elemen list. 
+
+Kemudian pada konten copyright (konten paragraf paling akhir pada sebuah body) yang kita tambahkan sebelumnya, masukkan konten tersebut ke dalam elemen <footer>.
+
+Terakhir, kelompokkan seluruh konten yang terdapat di antara elemen <header> dan elemen <footer> dengan menggunakan elemen <main>.
+
+Table
+Ada beberapa jenis informasi yang perlu ditampilkan dalam bentuk tabel, contohnya klasmen olahraga atau sebuah jadwal layaknya kalender. Ketika kita membuat sebuah tabel, pastinya kita akan banyak bermain dengan baris dan kolom. Pada materi ini kita akan belajar bagaimana cara membuat dan mengorganisir sebuah tabel pada HTML.
+
+Tapi sebelum itu, apa sih sebenarnya tabel dalam HTML itu? Elemen <table> pada HTML merepresentasikan data tabular atau informasi yang disajikan dalam sebuah tabel. Tabel sendiri disajikan dalam dua dimensi yang terdiri dari baris dan kolom (cell) yang berisikan sebuah data. Berikut contoh data sepakbola yang disajikan dalam bentuk tabel.
+
+Struktur Dasar Sebuah Tabel
+Tabel pada HTML disusun dari tiga buah elemen, yaitu <table>, <tr> ,dan <td> atau <th>. Elemen <table> digunakan untuk menandakan dimulai dan diakhirinya sebuah konten tabel dan juga sebagai wadah untuk tabel itu sendiri. Kemudian, elemen <tr> digunakan untuk membuat sebuah baris baru yang di dalamnya terdapat elemen <td> atau <th> sehingga menghasilkan sebuah cell.
+
+Elemen <td> yang berarti “table data” selain membuat cell elemen ini juga merupakan tempat di mana data pada tabel ditampung. Selanjutnya untuk elemen <th> atau “table header” digunakan untuk menentukan sebuah header pada kolom datanya. Untuk lebih jelasnya perhatikan ilustrasi berikut:
+
+Spanning Cell
+Terkadang kita membutuhkan sebuah sel yang mencakup untuk dua kolom ataupun dua baris sekaligus. Dalam aplikasi seperti Microsoft Word, hal ini biasa kita kenal sebagai merging cell atau menggabungkan sebuah sel. Ini memang menjadi sebuah fitur dasar dalam membuat sebuah tabel. Sehingga, pada HTML pun kita dapat melakukan hal tersebut. 
+
+Pada HTML hal ini lebih dikenal sebagai Spanning cell yang artinya menjangkau atau merentangkan sebuah ukuran sel lebih dari ukuran yang biasanya. Dengan spanning cell kita dapat membuat sebuah tabel yang lebih kompleks, tetapi akan membuat markup yang kita tulis menjadi sedikit sulit dibaca.
+
+
+
+Column Spans
+Untuk merentangkan sebuah kolom (column spanning) kita bisa menggunakan atribut colspan pada elemen <td> atau <th>. Berikut contoh untuk penggunaan colspan sehingga sebuah header mencangkup dua kolom.
+
+Maka sebuah elemen yang menggunakan atribut colspan akan mencakup ruang kolom sesuai nilai dari atribut itu sendiri.
+
+Untuk lebih jelasnya, kita bisa tambahkan atribut border pada elemen <table> agar terdapat garis pada tepi selnya.
+
+Row Spans
+Untuk merentangkan sebuah baris (row spanning) kita dapat menggunakan atribut rowspan. Sama seperti column spanning, tetapi atribut ini akan merentangkan sebuah sel ke bawah. Berikut contohnya.
+
+Elemen dan Atribut
+
+Description
+
+table
+
+Menetapkan elemen tabel.
+
+td
+
+Menetapkan sebuah sel dalam baris tabel.
+
+
+colspan=”number”
+
+Jumlah kolom yang dicakup oleh sel.
+
+
+rowspan=”number”
+
+Jumlah baris yang dicakup oleh sel.
+
+
+headers=”nama header”
+
+Mengasosiasikan data sel dengan header.
+
+th
+
+Menetapkan header yang terkait dengan baris atau kolom.
+
+
+colspan=”number”
+
+Jumlah kolom dicakup oleh header.
+
+
+rowspan=”number”
+
+Jumlah row yang dicakup oleh header.
+
+
+headers=”nama header”
+
+Mengasosiasikan header dengan header lain.
+
+
+scope=”row|col|rowgroup|colgroup”
+
+Mengasosiasikan header dengan baris, kelompok baris, kolom atau kelompok kolom.
+
+tr
+
+Menetapkan sebuah baris pada tabel.
+
+caption
+
+Memberikan judul pada sebuah tabel.
+
+col
+
+Menetapkan sebuah kolom.
+
+colgroup
+
+Menetapkan sebuah kelompok kolom.
+
+tbody
+
+Mengidentifikasi sebuah body dalam tabel.
+
+tfoot
+
+Mengidentifikasi sebuah footer dalam tabel.
+
+thead
+
+Mengidentifikasi sebuah header dalam tabel.
+
+Menerapkan Elemen Tabel pada Halaman Profil
+Setelah kita mengetahui cara menerapkan tabel pada website, mari kita perkaya kembali konten pada halaman profil, khususnya konten pada elemen <aside> yang sudah kita buat. Kita akan menambahkan detail informasi dari kota Bandung seperti negara luas, bahasa daerah, dan kode telepon. 
+
+Tapi sebelum itu mari kita atur kembali struktur elemen yang di dalam elemen <aside> tersebut. Saat ini elemen <aside> memiliki struktur seperti ini:
+
+
+Special Character
+Terdapat beberapa karakter spesial seperti copyright symbol © yang tidak termasuk ke dalam standar kelompok ASCII characters, di mana ASCII characters hanya menyediakan karakter seperti huruf, nomor, dan beberapa simbol dasar. Karakter lain seperti lebih dari (>) atau kurang dari (<) walaupun tersedia dalam ASCII character, karakter tersebut tidak dapat digunakan secara langsung sebagai konten pada HTML. Hal tersebut dikarenakan karakter tersebut akan terbaca sebagai sebuah tag.
+
+Untuk menampilkan karakter seperti yang disebutkan tadi, HTML memerlukan sebuah “escaped” karakter. Escaping artinya adalah tidak menuliskan karakter itu sendiri, melainkan menggantinya dengan nilai numeric atau character reference pada karakternya.
+
+Terdapat dua cara untuk melakukannya, yakni dengan menetapkan nilai numerik (numeric entity) atau menggunakan nama singkatan yang sudah ditetapkan untuk masing-masing karakternya (named entity). Semua referensi karakter dimulai dengan “&” dan diakhiri dengan “;”.
+
+Contohnya untuk menggunakan simbol copyright, kita dapat menggunakan “&copy” 
+
+Karakter
+
+Deskripsi
+
+Named Entity
+
+Numeric Entity
+
+
+non-breaking space
+
+&nbsp;
+
+&#160;
+
+&
+
+Ampersand
+
+&amp;
+
+&#038;
+
+’
+
+Apostrophe
+
+&apos;
+
+&#039;
+
+<
+
+Kurang dari (less-than)
+
+&lt;
+
+&#060;
+
+>
+
+Lebih dari (greater-than)
+
+&gt;
+
+&#062;
+
+©
+
+Hak cipta (copyright)
+
+&copy;
+
+&#169;
+
+®
+
+Merek dagang terdaftar (registered trademark)
+
+&reg;
+
+&#174;
+
+™
+
+Merek dagang (trademark)
+
+&trade;
+
+&#8482;
+
+£
+
+Pound
+
+&pound;
+
+&#163;
+
+¥
+
+Yen
+
+&yen;
+
+&#165;
+
+€
+
+Euro
+
+&euro;
+
+&#8364;
+
+–
+
+En-dash
+
+&ndash;
+
+&#8211;
+
+—
+
+Em-dash
+
+&mdash;
+
+&#8212;
+
+‘
+
+Kutip tunggal kiri
+
+&lsquo;
+
+&#8216;
+
+’
+
+Kutip tunggal kanan
+
+&rsquo;
+
+&#8217;
+
+“
+
+Kutip ganda kiri
+
+&ldquo;
+
+&#8221;
+
+”
+
+Kutip ganda kanan
+
+&rdquo;
+
+&#8221;
+
+•
+
+Bullet
+
+&bull;
+
+&#8226;
+
+...
+
+Horizontal ellipsis
+
+&hellip;
+
+&#8230;
 
