@@ -8,6 +8,7 @@ body {
 
 main {
     padding: 20px;
+    overflow: auto;
 }
 
 h2 {
@@ -40,6 +41,12 @@ p {
 nav {
     background-color: #00a2c6;
     padding: 5px;
+    position: sticky;
+    top: 0;
+}
+
+header {
+    display: inline;
 }
 
 nav a {
@@ -93,4 +100,30 @@ nav li {
     display: inline;
     list-style-type: none;
     margin-right: 20px;
+}
+
+#content {
+    float: left;
+    width: 75%;
+}
+
+aside {
+    float: right;
+    width: 25%;
+    padding-left: 20px;
+}
+
+/*Pengaturan untuk perapihan box model*/
+* {
+    box-sizing: border-box;
+}
+
+/*untuk scale pada media device berbeda seperti HP*/
+@media screen and (max-width: 1000px) {
+
+    #content,
+    aside {
+        width: 100%;
+        padding: 0;
+    }
 }
