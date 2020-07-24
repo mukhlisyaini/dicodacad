@@ -187,6 +187,442 @@ Berikut snippet code dari contoh kode yang digunakan pada materi di atas, Anda b
 
 https://glot.io/snippets/fhzffeo6bn
 
+Tipe Data
+Nilai yang kita tetapkan pada variabel pasti memiliki tipe data. Tipe data merupakan pengklasifikasian data berdasarkan jenis data tersebut. Pada JavaScript terdapat beberapa tipe data sebagai berikut:
+
+Undefined
+Tipe data ini terbentuk ketika sebuah variabel tidak memiliki nilai, dalam arti lain ketika kita mendeklarasikan variabel tanpa menginisialisasikan nilainya, maka variabel tersebut menjadi undefined. Contoh:
+
+let x;
+console.log(typeof(x));
+ 
+/* output: undefined */
+Pada contoh kode di atas, kita mendeklarasikan variabel x, tetapi kita tidak menginisialisasikan dengan nilai apapun. Ketika kita memastikan tipe data dengan menggunakan fungsi typeof() maka menghasilkan output undefined.
+
+Fungsi typeof() digunakan untuk memastikan tipe data pada variabel dengan mengembalikan tipe data tersebut dalam bentuk teks
+
+ 
+
+Numbers
+Nilai dari tipe data number adalah angka. JavaScript variabel bertipe data number dituliskan seperti ini:
+
+let x = 10;
+Jika angka tersebut merupakan sebuah bilangan desimal, maka kita bisa gunakan tanda titik pada pecahan bilangannya.
+
+let x = 10;
+console.log(typeof(x))
+ 
+/* output: number */
+ 
+let y = 17.25;
+console.log(typeof(y))
+ 
+/* output: number */
+Pada tipe data number kita juga dapat melakukan perhitungan aritmatika seperti penambahan, pengurangan, perkalian, dll. Berikut operator yang dapat kita gunakan dalam melakukan perhitungan aritmatika pada tipe data number:
+
+Operator
+
+Fungsi
+
+Contoh
+
++
+
+Penambahan
+
+10 + 10 = 20
+
+-
+
+Pengurangan
+
+15 - 7 = 8
+
+/
+
+Pembagian
+
+21 / 7 = 3
+
+*
+
+Perkalian
+
+9 * 9 = 81
+
+%
+
+Sisa hasil bagi
+
+5 % 2 = 1
+
+
+
+let a = 12;
+let b = 9;
+ 
+console.log(a + b)
+console.log(a - b)
+console.log(a * b)
+console.log(a / b)
+console.log(a % b)
+ 
+/* output:
+21
+3
+108
+1.3333333333333333
+3
+Pada operator aritmatika juga terdapat operator increment (++) dan decrement (--). Operator increment dan decrement digunakan untuk menambahkan atau mengurangi nilai 1 pada nilai variabel yang ada sekarang.
+
+Operator ini dapat dituliskan sebelum atau sesudah variabel, tetapi hal tersebut bukan berarti sama. Berikut ketentuannya:
+
+Jika dituliskan setelah variabel (x++), statement akan mengembalikan nilai variabel saat ini sebelum ditingkatkan nilainya.
+Jika dituliskan sebelum variabel (++x), statement akan mengembalikan nilai variabel setelah ditingkatkan nilainya.
+Lebih jelasnya berikut contoh kode dalam penerapan operator tersebut, perhatikan hasil yang di dapat.
+
+/* Increment dan Decrement */
+ 
+let postfix = 5;
+console.log(postfix++);
+/* output: 5 */
+ 
+let prefix = 5;
+console.log(++prefix);
+/* output: 6 */
+
+
+Strings
+Tipe data selanjutnya adalah strings, String ini dasarnya adalah sebuah teks. Pada JavaScript untuk menetapkan nilai string pada variabel, gunakan tanda single (‘) atau double quote (“) di antara teksnya. Contohnya:
+
+let greet = "Hello";
+console.log(typeof(greet))
+ 
+/* output: string */
+Apa pun yang berada di antara tanda double quote atau single quote merupakan sebuah string, baik itu angka, huruf maupun karakter spesial. 
+
+Pada string juga kita dapat menggunakan operator plus (+). Operator tersebut pada string berfungsi untuk menggabungkan dua teks yang terpisah menjadi satu buah teks. Contohnya seperti ini:
+
+let greet = "Hello";
+let moreGreet = greet + greet;
+console.log(moreGreet);
+ 
+/* output: HelloHello */
+
+
+Boolean
+Boolean hanya dapat memiliki dua nilai, yakni true atau false. Tipe data ini menjadi kunci utama dalam penentuan logika, kita akan memahaminya nanti ketika pembahasan if/else statement. Untuk menetapkan nilai boolean pada variabel kita bisa menggunakan keyword true atau false.
+
+let x = true;
+let y = false;
+ 
+console.log(typeof(x))
+console.log(typeof(y))
+ 
+/* output: 
+boolean
+boolean
+*/
+Atau kita bisa gunakan operator komparasi seperti lebih dari (>) atau kurang dari (<). Contohnya:
+
+const a = 10;
+const b = 12;
+ 
+let isGreater = a > b;
+let isLess = a < b;
+ 
+console.log(isGreater);
+console.log(isLess);
+ 
+/* output:
+false
+true
+*/
+
+
+Null
+Yang terakhir adalah null. Serupa dengan undefined, namun null perlu diinisialisasikan pada variabel. null biasa digunakan sebagai nilai sementara pada variabel, tapi sebenarnya nilai tersebut “tidak ada”.
+
+Terkadang kita perlu membuat sebuah variabel, namun kita belum memerlukan nilai apa apa dan tidak ingin terikat oleh tipe data apapun. Nah, daripada kita tidak menetapkan nilai apapun (variabel akan undefined) sebaiknya kita beri nilai null pada variabel tersebut, dan ubah nanti ketika kita membutuhkannya.
+
+Untuk menetapkan null pada variabel, kita dapat gunakan keyword null ketika variabel tersebut diinisialisasikan.
+
+let someLaterData = null;
+console.log(someLaterData);
+ 
+/* output:
+null
+*/
+Meskipun terdapat beberapa tipe data dalam JavaScript, tetapi variabel pada JavaScript memiliki sifat tipe data yang dinamis. Artinya, kita dapat memberikan tipe data yang berubah-ubah pada satu variabel yang sama. Contohnya:
+
+let x; // x merupakan undefined
+x = 1 // sekarang x merupakan number
+x = true // sekarang x merupakan boolean
+x = "Harry" // sekarang x merupakan string
+Berikut snippet code dari contoh kode yang digunakan pada materi di atas, Anda bisa mencobanya sendiri dengan berbagai macam tipe data pada JavaScript dan menampilkannya pada console.
+
+https://glot.io/snippets/fhzkayhcom
+
+Arrays dan Objek
+Kita sudah mengenal tipe data dasar yang ada pada JavaScript. Kali ini kita akan membahas mengenai array dan objek pada JavaScript. Keduanya dapat menampung lebih dari satu tipe data dasar yang digunakan untuk mengelola sebuah data.
+
+Arrays
+Array merupakan tipe data yang dapat mengelompokkan lebih dari satu nilai dari tipe data lain dengan menempatkannya pada satu variabel. Contoh:
+
+let myArray = ["Coklat", 42.5, 22, true, "Programming"];
+console.log(myArray);
+ 
+/* output:
+[ 'Coklat', 42.5, 22, true, 'Programming' ]
+*/
+Nilai - nilai yang berada pada array disusun dan diakses secara indexing. Untuk mengakses nilai di dalam array kita gunakan tanda kurung siku [] yang di dalamnya berupa angka yang merupakan posisi nilai yang ingin diakses.
+
+let myArray = ["Coklat", 42.5, 22, true, "Programming"];
+console.log(myArray[1]);
+ 
+/* output:
+42.5
+*/
+Yang perlu kita ketahui adalah nilai index dimulai dari angka 0. Terlihat pada contoh kode di atas, kita mengakses index ke-1 pada myArray. Nilai yang muncul adalah nilai ke-2 dari array tersebut, yakni 42.5. Jika kita tidak mengakses nilai array lebih dari index-nya maka hasilnya akan undefined. Index terakhir array selalu jumlah nilai array - 1.
+
+let myArray = ["Coklat", 42.5, 22, true, "Programming"];
+console.log(myArray[0]);
+console.log(myArray[1]);
+console.log(myArray[2]);
+console.log(myArray[3]);
+console.log(myArray[4]);
+console.log(myArray[5]);
+console.log("Panjang nilai myArray adalah " + myArray.length + ".");
+ 
+/* output:
+Coklat
+42.5
+22
+true
+Programming
+undefined
+Panjang nilai myArray adalah 5.
+*/
+
+
+Objek
+Objek serupa dengan array yang dapat menampung banyak nilai dengan tipe data yang beragam. Untuk mengelola data menggunakan objek, bedanya objek diakses tidak melalui indexing,  melainkan menggunakan pendekatan key-value. Untuk mengakses nilainya kita gunakan key. Key juga biasa disebut dengan properti.
+
+Untuk menetapkan objek pada variabel gunakan tanda kurung kurawal { } dalam menginisialisasinya. Kemudian di dalamnya kita tetapkan key: value.
+
+let object = {key1: "value1", key2: "value2", key3: "value3"}
+Dalam menentukan nama key, gunakanlah nama yang dapat mendeskripsikan dari value-nya. Pada value, kita dapat mengisikan nilai dengan tipe data apapun, termasuk array. Contoh:
+
+let user = {firstName: “Harry”, lastName: “Potter”,  age: 20, isMuggle: false, stuff: ["Wand", "Flying Car", "Owl"]}; 
+Dalam menuliskan objek, baris baru tidaklah penting dan tidak akan berpengaruh apa pun. Sehingga lebih baik setiap kita menetapkan key-value buatlah baris baru untuk memisahkan antar nilainya, hal ini akan memudahkan kita dalam memahami struktur data yang berada pada objek.
+
+let user = {
+    firstName: “Harry”,
+    lastName: “Potter”, 
+    age: 20, 
+    isMuggle: false,
+    stuff: ["Magic Wind", "Flying Car", "Owl"]
+};
+Kemudian untuk mengakses nilai dari properti objek kita dapat gunakan tanda titik diikuti dengan nama properti-nya. Contoh:
+
+console.log("Hallo, nama saya " + user.firstName + " " + user.lastName);
+console.log("Umur saya " + user.age + " tahun");
+ 
+/* output
+Hallo, nama saya Harry Potter
+Umur saya 20 tahun
+*/
+Bahkan dalam properti objek, kita dapat menyimpan nilai objek lainnya. Contohnya properti firstName dan lastName dapat dikelompokan kembali dalam sebuah objek baru sebagai berikut:
+
+let user = {
+    name: {
+        first: "Harry",
+        last: "Potter"
+    },
+    age: 20, 
+    isMuggle: false,
+    stuff: ["Magic Wind", "Flying Car", "Owl"]
+}
+Untuk mendapatkan nilainya kita perlu mengakses properti dari objek user kemudian name. Sehingga penulisannya menjadi seperti berikut:
+
+console.log("Hallo, nama saya " + user.name.first + " " + user.name.last);
+ 
+/* output
+Hallo, nama saya Harry Potter
+*/
+Mungkin seperti itulah gambaran mengenai objek di JavaScript, penting untuk Anda garis bawahi bahwa dalam mengelola banyak tipe data pada JavaScript, Anda dapat menggunakan array maupun objek. Pembahasan di atas cukup sebagai landasan pengetahuan mengenai dua hal itu ya.
+
+Berikut snippet code dari contoh kode yang digunakan pada materi di atas, Anda bisa mencobanya sendiri dengan mengubah struktur objek atau array dan menampilkannya pada console.
+
+https://glot.io/snippets/fi5zpzsh6w
+
+Banyak hal sebenarnya yang dapat diceritakan tentang dua hal ini, terutama untuk objek. Jika Anda ingin tahu lebih dalam, Anda bisa baca dokumentasinya pada tautan yang disediakan oleh MDN:
+
+Array : https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array
+Objek : https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+
+Assignment Operator
+Dari contoh kode yang kita gunakan sebelumnya sebenarnya kita sudah menggunakan assignment operator. Operator ini digunakan untuk memberikan nilai pada variabel.
+
+Pada dasarnya operator ini adalah tanda sama dengan (=), di mana tanda ini digunakan untuk menginisialisasi nilai pada variabel. Variabel yang akan diberikan nilai ditempatkan pada sebelah kiri dan nilainya ditempatkan pada sebelah kanan (nilai dapat berupa variabel lain atau nilai primitif, array, atau objek). Di antara keduanya terdapat operator assignment.
+
+x = y;
+Contoh pada statement tersebut kita menginisialisasikan nilai y pada variabel x, sehingga nilai x sekarang memiliki nilai yang sama dengan y.
+
+Ada beberapa assignment operator tambahan lain dalam menginisialisasikan nilai pada variabel, atau bisa kita sebut sebagai shortcut dalam menentukan nilai. Contohnya:
+
+let x = 10;
+let y = 5
+ 
+x += y;
+ 
+console.log(x)
+Pada contoh kode di atas bisa terdapat statement x += y; apa itu artinya? Assignment operator tersebut digunakan sebagai shortcut dari x = x + y. Cara ini juga dapat digunakan pada operator aritmatika lain seperti, perkalian, pengurangan, pembagian, dan lainnya.
+
+let x = 10;
+let y = 5
+ 
+x += y; // artinya -> x = x + y;
+x -= y; // artinya -> x = x - y;
+x *= y; // artinya -> x = x * y;
+x /= y; // artinya -> x = x / y;
+x %= y; // artinya -> x = x % y;
+ 
+console.log(x);
+Berikut snippet code dari contoh kode yang digunakan pada materi di atas. Anda bisa mencobanya sendiri penggunaan operator assignment yang sudah dipelajari.
+
+Operator Komparasi
+Sekarang kita sudah mengetahui bagaimana cara menyimpan nilai pada sebuah variabel, array, ataupun objek. Nah, selanjutnya kita akan belajar mengenai operator komparasi sebagai logika dasar dalam membandingkan nilai pada JavaScript.
+
+Terdapat serangkaian karakter khusus yang disebut dengan operator pembanding/komparasi yang dapat mengevaluasi dan membandingkan dua nilai. Berikut daftar operator dan fungsinya:
+
+Operator
+
+Fungsi
+
+==
+
+Membandingkan kedua nilai apakah sama. (Tidak Identik)
+
+!=
+
+Membandingkan kedua nilai apakah tidak sama. (Tidak Identik)
+
+===
+
+Membandingkan kedua nilai apakah identik.
+
+!==
+
+Membandingkan kedua nilai apakah tidak identik.
+
+>
+
+Membandingkan dua nilai apakah nilai pertama lebih besar dari nilai kedua.
+
+>=
+
+Membandingkan dua nilai apakah nilai pertama lebih besar atau sama dengan dari nilai kedua.
+
+<
+
+Membandingkan dua nilai apakah nilai pertama lebih kecil dari nilai kedua.
+
+<=
+
+Membandingkan dua nilai apakah nilai kedua lebih kecil dari atau sama dengan nilai pertama.
+
+Ketika kita melakukan perbandingan antara dua nilai, JavaScript akan mengevaluasi kedua nilai tersebut dan akan mengembalikan boolean dengan nilai hasil perbandingan tersebut, baik false, atau true. Berikut contohnya:
+
+let a = 10;
+let b = 12;
+ 
+console.log(a < b);
+console.log(a > b);
+ 
+/* output
+true
+false
+*/
+
+
+Perbedaan antara “sama” dan “Identik”
+Dalam operator komparasi di JavaScript, hal yang menjadi sedikit “tricky” adalah membedakan antara “sama” (==) dan “identik” (===).
+
+Kita sudah mengetahui bahwa setiap nilai pasti memiliki tipe data baik itu number, string atau boolean. Contohnya sebuah string “10” dan number 10 merupakan hal yang serupa, tetapi keduanya tidak benar-benar sama.
+
+Hal inilah yang membedakan antara sama dan identik pada JavaScript. Jika kita ingin membandingkan hanya dari kesamaan nilainya kita bisa gunakan == tapi jika kita ingin membandingkan dengan memperhatikan tipe datanya kita gunakan ===.
+
+Contohnya sebagai berikut:
+
+const aString = '10';
+const aNumber = 10
+ 
+console.log(aString == aNumber) // true, karena nilainya sama-sama 10
+console.log(aString === aNumber) // false, karena walaupun nilainya sama, tetapi tipe datanya berbeda
+ 
+/* output
+true
+false
+*/
+
+
+Logical Operators
+Terdapat beberapa operator lain yang dapat kita gunakan untuk menetapkan logika yang lebih kompleks, yakni dengan logical operators. Dengan logical operator kita dapat menggunakan kombinasi dari dua nilai boolean atau bahkan lebih dalam menetapkan logika.
+
+Pada JavaScript terdapat tiga buah karakter khusus yang berfungsi sebagai logical operator, berikut macam-macam logical operator dan fungsinya:
+
+Operator
+
+Deskripsi
+
+&&
+
+Operator dan (and), logika akan menghasilkan true apabila semua kondisi terpenuhi (bernilai true).
+
+||
+
+Operator atau (or), logika akan menghasilkan true apabila ada salah satu kondisi terpenuhi (bernilai true).
+
+!
+
+Operator tidak (not), digunakan untuk membalikan suatu kondisi.
+
+Berikut contoh penerapannya pada JavaScript:
+
+let a = 10;
+let b = 12;
+ 
+/* AND operator */
+console.log(a < 15 && b > 10); // (true && true) -> true
+console.log(a > 15 && b > 10); // (false && true) -> false
+ 
+/* OR operator */
+console.log(a < 15 || b > 10); // (true || true) -> true
+console.log(a > 15 || b > 10); // (false || true) -> true
+ 
+/* NOT operator */
+console.log(!(a < 15)); // !(true) -> false
+console.log(!(a < 15 && b > 10)); // !(true && true) -> !(true) -> false
+ 
+/* output
+true
+false
+true
+true
+false
+false
+*/
+Mungkin sebagian dari kita bertanya, sebenarnya apa kegunaan dari nilai boolean selain hanya menampilkan nilai true dan false saja? Pada pembahasan tipe data sudah pernah disebutkan bahwa boolean merupakan salah satu kunci dari logika pemrograman, karena boolean dapat mengontrol aliran pada program.
+
+Lantas bagaimana cara boolean mengontrol sebuah aliran program? Pada bab selanjutnya, kita akan membahas mengenai if/else statement yang dapat mengontrol flow pada program, tentunya pada penggunaan statement ini boolean sangat berperan.
+
+Berikut snippet code dari contoh kode yang digunakan pada materi di atas. Silakan Anda mencobanya sendiri dengan mengubah beberapa penggunaan operator komparasi dan menampilkannya pada console.
+
+https://glot.io/snippets/fi6b6h58lz
+
+
 
 
 
